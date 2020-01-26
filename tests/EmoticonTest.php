@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MarufMax\Emoticon\Test;
 
 use MarufMax\Emoticon\Emoticon;
@@ -12,7 +11,7 @@ class EmoticonTest extends TestCase
     public function it_can_return_an_emoji_when_given_a_string()
     {
         $emoji = new Emoticon();
-        
+
         $this->assertSame('😆', $emoji->get(':laughing:'));
     }
 }
