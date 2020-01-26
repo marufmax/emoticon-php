@@ -37,7 +37,7 @@ class Emoticon
      */
     public function emojify(string $text): string
     {
-        return preg_replace_callback('/:([a-zA-Z0-9_\-\+]+):/', function ($match) use ($text) {
+        return preg_replace_callback('/:([a-zA-Z0-9_\-\+]+):/', function ($match) {
             return $this->get($match[1]);
         }, $text);
     }
