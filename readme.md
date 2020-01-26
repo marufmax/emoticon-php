@@ -1,4 +1,10 @@
 # Emoticon PHP
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/marufmax/emoticon-php.svg?style=flat-square)](https://packagist.org/packages/marufmax/emoticon-php)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](readme.md)
+[![Quality Score](https://img.shields.io/scrutinizer/quality/g/marufmax/emoticon-php.svg?style=flat-squar)](https://scrutinizer-ci.com/g/marufmax/emoticon-php)
+[![StyleCI](https://styleci.io/repos/235276426/shield?branch=master)](https://styleci.io/repos/235276426)
+
+
 
 Composer package for emoticons  :tada:
 
