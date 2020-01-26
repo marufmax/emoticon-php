@@ -72,8 +72,3 @@ class Emoticon
         return $item;
     }
 }
-
-$emoji = new Emoticon();
-
-echo($emoji->random());
-
