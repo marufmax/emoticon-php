@@ -11,6 +11,12 @@ class Emoticon
         $this->list = require('IconList.php');
     }
     
+    /**
+     * Get a single emoji
+     *
+     * @param string $name
+     * @return bool|mixed
+     */
     public function get(string $name)
     {
       $itemName = $this->stripColons($name);
@@ -21,11 +27,38 @@ class Emoticon
       return false;
     }
     
-    public function emojify(string $text)
+    /**
+     * Replace all :emoji: with the actual emoji
+     *
+     * @param string $text
+     * @return string
+     */
+    public function emojify(string $text): string
     {
-        $item = $this->stripColons($text);
-        
-        return $item;
+        return preg_replace_callback('/:([a-zA-Z0-9_\-\+]+):/', function ($match) use ($text) {
+            return $this->get($match[1]);
+        }, $text);
+    }
+    
+    /**
+     * Returns array of items with matching emoji
+     *
+     * @param string $emoji
+     * @return array
+     */
+    public function search(string $emoji): array
+    {
+        return array_filter($this->list, function ($item) use ($emoji) {
+            return strpos($item, $emoji) !== false ;
+        }, ARRAY_FILTER_USE_KEY);
+    }
+    
+    /**
+     * Generate a random emoji
+     */
+    public function random()
+    {
+        return $this->list[array_rand($this->list)];
     }
     
     protected function stripColons(string $item) : string
@@ -38,9 +71,9 @@ class Emoticon
         
         return $item;
     }
-  
 }
 
-$emo = new Emoticon();
+$emoji = new Emoticon();
 
-print_r($emo->emojify('I :heart: :coffee:!'));
+echo($emoji->random());
+
