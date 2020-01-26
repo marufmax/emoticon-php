@@ -19,8 +19,13 @@ just run `composer require marufmax/emoticon-php` in your project's directory
     $emoji->emojify('I like :metal: ');  // It will render the text with metal emoji
 ```
 
-## License
+## Testing
+```shell script
+$composer test
+```
 
+## Security
+If you discover any security related issues, please email hi@marufalom.com instead of using the issue tracker.
 
 
 
