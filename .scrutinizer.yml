@@ -1,3 +1,13 @@
+build:
+  nodes:
+    coverage:
+      tests:
+        override:
+          - command: ./vendor/bin/phpunit
+            coverage:
+              file: /build/coverage
+              format: clover
+
 filter:
   excluded_paths: [tests/*]
 
