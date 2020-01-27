@@ -5,7 +5,6 @@
 [![StyleCI](https://styleci.io/repos/235276426/shield?branch=master)](https://styleci.io/repos/235276426)
 
 
-
 Composer package for emoticons  :tada:
 
 ## Installation
