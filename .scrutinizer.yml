@@ -3,7 +3,7 @@ build:
     emoticon-tests-with-coverage:
       tests:
         override:
-          - command: phpunit --coverage-clover=build-file
+          - command: vendor/bin/phpunit --coverage-clover=build-file
             coverage:
               file: build-file
               format: php-clover
@@ -26,8 +26,3 @@ checks:
     fix_line_ending: true
     fix_identation_4spaces: true
     fix_doc_comments: true
-
-tools:
-  external_code_coverage:
-    timeout: 600
-    runs: 3
