@@ -52,7 +52,7 @@ class EmoticonTest extends TestCase
     }
 
     /**
-     * Data Provider
+     * Data Provider.
      *
      * @return array
      */
