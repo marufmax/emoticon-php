@@ -35,14 +35,35 @@ class EmoticonTest extends TestCase
         $this->assertArrayHasKey('blue_heart', $result);
     }
 
-    /** @test */
-    public function it_can_make_emojies_inside_of_a_string()
+    /**
+     * @test
+     * @dataProvider texts_with_emojis
+     *
+     * @param string $text
+     * @param string $expected
+     */
+    public function it_can_make_emojies_inside_of_a_string($text, $expected)
     {
         $emoji = new Emoticon();
 
-        $result = $emoji->emojify('I am :laughing:');
+        $result = $emoji->emojify($text);
 
-        $this->assertSame('I am 😆', $result);
+        $this->assertSame($expected, $result);
+    }
+
+    /**
+     * Data Provider
+     *
+     * @return array
+     */
+    public function texts_with_emojis(): array
+    {
+        return [
+            ['I am :laughing:', 'I am 😆'],
+            [':+1: for the Project', '👍 for the Project'],
+            ['I am not a :emoji:', 'I am not a :emoji:'],
+            [':FOO: :laughing:', ':FOO: 😆'],
+        ];
     }
 
     /** @test */
