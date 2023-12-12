@@ -37,6 +37,7 @@ class EmoticonTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider texts_with_emojis
      *
      * @param string $text
